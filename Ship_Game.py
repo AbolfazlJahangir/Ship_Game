@@ -12,13 +12,9 @@ player2_1 = [1, 0]
 player2_2 = [2, 0]
 player2_3 = [3, 0]
 
-move1_1 = True
-move1_2 = True
-move1_3 = True
 
-move2_1 = True
-move2_2 = True
-move2_3 = True
+move1 = [True, True, True]
+move2 = [True, True, True]
 
 def initializeBoard():
     global board
@@ -79,15 +75,7 @@ def isValidMove(x, y, turn):
             return -2
 
 def play(turn):
-    global board, player1_1, player1_2, player1_3, player2_1, player2_2, player2_3, move1_1, move1_2, move1_3, move2_1, move2_2, move2_3
-
-    move1_1 = True if player1_1[0] == n - 1 else False
-    move1_2 = True if player1_2[0] == n - 1 else False
-    move1_3 = True if player1_3[0] == n - 1 else False
-
-    move2_1 = True if player2_1[1] == n - 1 else False
-    move2_2 = True if player2_2[1] == n - 1 else False
-    move2_3 = True if player2_3[1] == n - 1 else False
+    global board, player1_1, player1_2, player1_3, player2_1, player2_2, player2_3
 
     if checkWinner() == 1:
         print("Player1 won!")
@@ -138,6 +126,7 @@ def play(turn):
             play(1)
 
         else:
+            print("Player X can not move!")
             play(2)
         
     else:
@@ -182,6 +171,7 @@ def play(turn):
             play(2)
         
         else:
+            print("Player Y can not move!")
             play(1)
         
 
